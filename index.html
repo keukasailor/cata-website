@@ -1,258 +1,775 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.5">
-  <style>
-    body {background-color: #f2efe9}
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #58554d; -webkit-text-stroke: #58554d}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c; min-height: 18.0px}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #58554d; -webkit-text-stroke: #58554d; background-color: #ffffff}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #58554d; -webkit-text-stroke: #58554d}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #f2efe9; -webkit-text-stroke: #f2efe9; min-height: 17.0px}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #f2efe9; -webkit-text-stroke: #f2efe9}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #58554d; -webkit-text-stroke: #58554d}
-    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #beff46; -webkit-text-stroke: #beff46}
-    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #f2efe9; -webkit-text-stroke: #f2efe9}
-    p.p12 {margin: 0.0px 0.0px 16.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #58554d; -webkit-text-stroke: #58554d}
-    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px '.Apple Color Emoji UI'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c}
-    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #58554d; -webkit-text-stroke: #58554d}
-    p.p17 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c; background-color: #0c0c0c; background-color: rgba(12, 12, 12, 0.12); min-height: 18.0px}
-    p.p18 {margin: 0.0px 0.0px 16.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #f2efe9; color: rgba(242, 239, 233, 0.4); -webkit-text-stroke: rgba(242, 239, 233, 0.4)}
-    p.p20 {margin: 0.0px 0.0px 0.0px 0.0px; font: 72.0px 'Helvetica Neue'; color: #f2efe9; color: rgba(242, 239, 233, 0.059); -webkit-text-stroke: rgba(242, 239, 233, 0.059)}
-    p.p21 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #beff46; -webkit-text-stroke: #beff46}
-    p.p23 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #f2efe9; color: rgba(242, 239, 233, 0.5); -webkit-text-stroke: rgba(242, 239, 233, 0.5)}
-    p.p24 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #fc7a53; -webkit-text-stroke: #fc7a53}
-    p.p26 {margin: 0.0px 0.0px 32.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #58554d; -webkit-text-stroke: #58554d}
-    p.p27 {margin: 0.0px 0.0px 0.0px 0.0px; font: 48.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c}
-    p.p28 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #58554d; -webkit-text-stroke: #58554d}
-    p.p29 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c; background-color: #0c0c0c; min-height: 18.0px}
-    p.p30 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #f2efe9; color: rgba(242, 239, 233, 0.3); -webkit-text-stroke: rgba(242, 239, 233, 0.3)}
-    p.p31 {margin: 0.0px 0.0px 0.0px 0.0px; font: 42.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c}
-    p.p32 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #0c0c0c; color: rgba(12, 12, 12, 0.6); -webkit-text-stroke: rgba(12, 12, 12, 0.6)}
-    p.p33 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c; background-color: #beff46; min-height: 18.0px}
-    p.p34 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #f2efe9; color: rgba(242, 239, 233, 0.4); -webkit-text-stroke: rgba(242, 239, 233, 0.4)}
-    p.p35 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c; background-color: #fc5329; min-height: 18.0px}
-    p.p36 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c; background-color: #9571f8; min-height: 18.0px}
-    p.p37 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #f2efe9; color: rgba(242, 239, 233, 0.3); -webkit-text-stroke: rgba(242, 239, 233, 0.3)}
-    p.p38 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c}
-    p.p39 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #f2efe9; color: rgba(242, 239, 233, 0.5); -webkit-text-stroke: rgba(242, 239, 233, 0.5)}
-    p.p41 {margin: 0.0px 0.0px 14.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #58554d; -webkit-text-stroke: #58554d}
-    p.p43 {margin: 0.0px 0.0px 0.0px 0.0px; font: 28.0px '.Apple Color Emoji UI'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c}
-    p.p45 {margin: 0.0px 0.0px 14.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #58554d; -webkit-text-stroke: #58554d}
-    p.p47 {margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Helvetica Neue'; color: #f2efe9; -webkit-text-stroke: #f2efe9}
-    p.p49 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #f2efe9; color: rgba(242, 239, 233, 0.25); -webkit-text-stroke: rgba(242, 239, 233, 0.25)}
-    li.li2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #58554d; -webkit-text-stroke: #58554d}
-    li.li42 {margin: 0.0px 0.0px 6.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #58554d; -webkit-text-stroke: #58554d}
-    li.li48 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #f2efe9; color: rgba(242, 239, 233, 0.4); -webkit-text-stroke: rgba(242, 239, 233, 0.4)}
-    span.s1 {font-kerning: none; background-color: rgba(242, 239, 233, 0.85)}
-    span.s2 {background-color: rgba(242, 239, 233, 0.85); -webkit-text-stroke: 0px #000000}
-    span.s3 {font-kerning: none}
-    span.s4 {font-kerning: none; color: #fc5329; -webkit-text-stroke: 0px #fc5329}
-    span.s5 {font-kerning: none; background-color: #0c0c0c}
-    span.s6 {font-kerning: none; background-color: #ffffff}
-    span.s7 {font-kerning: none; background-color: #beff46}
-    span.s8 {font-kerning: none; background-color: rgba(190, 255, 70, 0.15)}
-    span.s9 {font-kerning: none; background-color: rgba(252, 83, 41, 0.15)}
-    span.s10 {font-kerning: none; background-color: #141414}
-    span.s11 {font: 11.0px '.Apple Color Emoji UI'; font-kerning: none; background-color: #beff46}
-    span.s12 {font-kerning: none; background-color: #1c1c1c}
-    span.s13 {font-kerning: none; color: #f2efe9; background-color: #141414; -webkit-text-stroke: 0px #f2efe9}
-    span.s14 {font-kerning: none; background-color: #fc5329}
-    span.s15 {-webkit-text-stroke: 0px #000000}
-    span.s16 {font: 13.0px 'Helvetica Neue'; text-decoration: underline ; font-kerning: none; background-color: #ffffff}
-    span.s17 {text-decoration: underline ; font-kerning: none; color: #0c0c0c; background-color: #ffffff; -webkit-text-stroke: 0px #0c0c0c}
-    span.s18 {background-color: #0c0c0c; -webkit-text-stroke: 0px #000000}
-    ul.ul1 {list-style-type: disc}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cata — Build habits. Together.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0e0e;
+    --paper: #f5f2ed;
+    --accent: #c8ff57;
+    --accent2: #ff6b35;
+    --muted: #6b6860;
+    --border: rgba(14,14,14,0.12);
+    --card: #ffffff;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 48px;
+    background: rgba(245,242,237,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: .02em;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(200,255,87,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(255,107,53,0.10) 0%, transparent 70%);
+  }
+  .hero-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 14px;
+    margin-bottom: 36px;
+    position: relative; z-index: 1;
+    width: fit-content;
+    opacity: 0;
+    animation: fadeUp .6s .2s ease forwards;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(52px, 8vw, 112px);
+    line-height: .95;
+    letter-spacing: -0.03em;
+    max-width: 900px;
+    position: relative; z-index: 1;
+    opacity: 0;
+    animation: fadeUp .7s .35s ease forwards;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent2);
+  }
+  .hero-sub {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--muted);
+    max-width: 480px;
+    margin-top: 28px;
+    line-height: 1.6;
+    position: relative; z-index: 1;
+    opacity: 0;
+    animation: fadeUp .7s .5s ease forwards;
+  }
+  .hero-cta {
+    display: flex; gap: 14px; align-items: center;
+    margin-top: 44px;
+    position: relative; z-index: 1;
+    opacity: 0;
+    animation: fadeUp .7s .65s ease forwards;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: transform .2s, background .2s;
+    border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: #1a1a1a; transform: translateY(-1px); }
+  .btn-secondary {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 14px 0;
+  }
+  .hero-scroll {
+    position: absolute; bottom: 40px; left: 48px;
+    font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--muted); z-index: 1;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .hero-scroll::before {
+    content: ''; width: 32px; height: 1px; background: var(--muted);
+  }
+
+  /* MARQUEE */
+  .marquee-wrap {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--ink);
+    overflow: hidden;
+    padding: 14px 0;
+  }
+  .marquee {
+    display: flex; gap: 48px;
+    animation: marquee 18s linear infinite;
+    white-space: nowrap;
+  }
+  .marquee span {
+    font-size: 12px; font-weight: 500; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--paper); opacity: .6;
+    flex-shrink: 0;
+  }
+  .marquee span.accent { color: var(--accent); opacity: 1; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+
+  /* FEATURES */
+  .features {
+    padding: 100px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-size: 11px; font-weight: 500; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(36px, 4vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 64px;
+    max-width: 600px;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .feat-card {
+    background: var(--card);
+    padding: 36px 32px;
+    transition: background .2s;
+  }
+  .feat-card:hover { background: #fafaf7; }
+  .feat-card:first-child { border-radius: 16px 0 0 16px; }
+  .feat-card:last-child { border-radius: 0 16px 16px 0; }
+  .feat-num {
+    font-family: var(--serif);
+    font-size: 13px; color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .feat-icon {
+    width: 40px; height: 40px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  .feat-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .feat-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* HOW IT WORKS */
+  .how {
+    padding: 100px 48px;
+    background: var(--ink);
+    color: var(--paper);
+    overflow: hidden;
+    position: relative;
+  }
+  .how::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,255,87,0.08) 0%, transparent 70%);
+  }
+  .how .section-label { color: rgba(245,242,237,0.4); }
+  .how .section-title { color: var(--paper); margin-bottom: 80px; }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 80px;
+    max-width: 900px;
+  }
+  .step { position: relative; }
+  .step-num {
+    font-family: var(--serif);
+    font-size: 72px;
+    color: rgba(245,242,237,0.06);
+    line-height: 1;
+    margin-bottom: -20px;
+    margin-left: -4px;
+  }
+  .step-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+    color: var(--paper);
+  }
+  .step-desc {
+    font-size: 14px;
+    color: rgba(245,242,237,0.5);
+    line-height: 1.65;
+  }
+  .step-tag {
+    display: inline-block;
+    font-size: 10px; font-weight: 500; letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .tag-green { background: rgba(200,255,87,0.15); color: var(--accent); }
+  .tag-orange { background: rgba(255,107,53,0.15); color: #ff8f65; }
+
+  /* SOCIAL PROOF */
+  .proof {
+    padding: 100px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .proof-text .section-title { margin-bottom: 24px; }
+  .proof-body {
+    font-size: 16px; color: var(--muted); line-height: 1.7;
+    margin-bottom: 32px;
+  }
+  .stat-row { display: flex; gap: 40px; margin-top: 48px; }
+  .stat-val {
+    font-family: var(--serif);
+    font-size: 48px;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .phone-mock {
+    background: var(--ink);
+    border-radius: 36px;
+    padding: 20px;
+    aspect-ratio: 9/19;
+    max-width: 280px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+  }
+  .phone-notch {
+    width: 80px; height: 20px;
+    background: var(--ink);
+    border-radius: 0 0 14px 14px;
+    margin: 0 auto 16px;
+    position: relative; z-index: 2;
+  }
+  .phone-screen {
+    background: #1a1a1a;
+    border-radius: 24px;
+    height: calc(100% - 36px);
+    padding: 20px 16px;
+    overflow: hidden;
+  }
+  .phone-header {
+    font-size: 11px; font-weight: 500; letter-spacing: .06em;
+    text-transform: uppercase; color: rgba(245,242,237,0.3);
+    margin-bottom: 20px;
+  }
+  .streak-card {
+    background: var(--accent);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 10px;
+  }
+  .streak-num {
+    font-family: var(--serif);
+    font-size: 42px; color: var(--ink); line-height: 1;
+  }
+  .streak-label { font-size: 11px; color: rgba(14,14,14,0.6); margin-top: 2px; }
+  .goal-item {
+    background: #252525;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .goal-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .goal-name { font-size: 12px; color: var(--paper); }
+  .goal-streak { font-size: 11px; color: rgba(245,242,237,0.4); margin-left: auto; }
+  .friend-row {
+    display: flex; gap: 6px; margin-top: 14px; align-items: center;
+  }
+  .friend-av {
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 500; color: var(--ink);
+    flex-shrink: 0;
+  }
+  .friend-info { font-size: 11px; color: rgba(245,242,237,0.5); }
+  .friend-info b { color: var(--paper); font-weight: 500; }
+
+  /* PRIVACY / SUPPORT SECTIONS */
+  .legal-section {
+    padding: 100px 48px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .legal-section h2 {
+    font-family: var(--serif);
+    font-size: 42px;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .legal-date {
+    font-size: 13px; color: var(--muted);
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .legal-section h3 {
+    font-family: var(--serif);
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin: 36px 0 12px;
+  }
+  .legal-section p {
+    font-size: 15px; color: var(--muted);
+    line-height: 1.75; margin-bottom: 14px;
+  }
+  .legal-section ul {
+    padding-left: 20px; margin-bottom: 14px;
+  }
+  .legal-section li {
+    font-size: 15px; color: var(--muted);
+    line-height: 1.75; margin-bottom: 6px;
+  }
+
+  /* SUPPORT */
+  .support-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 48px 0;
+  }
+  .support-card {
+    background: var(--card);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    padding: 28px 24px;
+  }
+  .support-icon { font-size: 28px; margin-bottom: 12px; }
+  .support-card h4 {
+    font-family: var(--serif);
+    font-size: 18px; margin-bottom: 8px;
+  }
+  .support-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .support-card a { color: var(--ink); font-weight: 500; }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 24px; color: var(--paper);
+    text-decoration: none;
+  }
+  .footer-links { display: flex; gap: 28px; list-style: none; }
+  .footer-links a {
+    font-size: 13px; color: rgba(245,242,237,0.4);
+    text-decoration: none; transition: color .2s;
+  }
+  .footer-links a:hover { color: var(--paper); }
+  .footer-copy { font-size: 12px; color: rgba(245,242,237,0.25); }
+
+  /* DIVIDER */
+  .section-divider {
+    width: 100%; height: 1px;
+    background: var(--border);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 24px 60px; }
+    .hero-scroll { left: 24px; }
+    .marquee-wrap, .features, .how, .proof, .legal-section, footer { padding-left: 24px; padding-right: 24px; }
+    .features-grid { grid-template-columns: 1fr; gap: 2px; }
+    .feat-card:first-child { border-radius: 16px 16px 0 0; }
+    .feat-card:last-child { border-radius: 0 0 16px 16px; }
+    .steps { grid-template-columns: 1fr; gap: 32px; }
+    .proof { grid-template-columns: 1fr; gap: 48px; }
+    .support-grid { grid-template-columns: 1fr; }
+    .stat-row { gap: 24px; }
+  }
+</style>
 </head>
 <body>
-<p class="p1"><span class="s1">Cata</span></p>
-<ul class="ul1">
-  <li class="li2"><span class="s2"></span><span class="s1">Features</span></li>
-  <li class="li2"><span class="s2"></span><span class="s1">How it works</span></li>
-  <li class="li2"><span class="s2"></span><span class="s1">Privacy</span></li>
-  <li class="li2"><span class="s2"></span><span class="s1">Support</span></li>
-</ul>
-<p class="p3"><span class="s3"></span><br></p>
-<p class="p4"><span class="s3">COMING SOON TO IOS</span></p>
-<h1 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 64.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">Build habits.<br>
-</span><span class="s4">Together.</span></h1>
-<p class="p6"><span class="s3">Set your goals, show up every day, and watch your circle do the same. No feeds. No filters. Just streaks that mean something.</span></p>
-<p class="p7"><span class="s3"></span><br></p>
-<p class="p8"><span class="s5">Get early access</span></p>
-<p class="p2"><span class="s3">See how it works →</span></p>
-<p class="p9"><span class="s3">SCROLL TO EXPLORE</span></p>
-<p class="p10"><span class="s5">DAILY PRACTICE</span></p>
-<p class="p11"><span class="s5">·</span></p>
-<p class="p11"><span class="s5">GOAL TRACKING</span></p>
-<p class="p11"><span class="s5">·</span></p>
-<p class="p10"><span class="s5">STREAK ACCOUNTABILITY</span></p>
-<p class="p11"><span class="s5">·</span></p>
-<p class="p11"><span class="s5">CLOSE-CIRCLE SOCIAL</span></p>
-<p class="p11"><span class="s5">·</span></p>
-<p class="p10"><span class="s5">NO ALGORITHMS</span></p>
-<p class="p11"><span class="s5">·</span></p>
-<p class="p11"><span class="s5">SHARED CHALLENGES</span></p>
-<p class="p11"><span class="s5">·</span></p>
-<p class="p10"><span class="s5">REAL PROGRESS</span></p>
-<p class="p11"><span class="s5">·</span></p>
-<p class="p11"><span class="s5">NO VANITY METRICS</span></p>
-<p class="p11"><span class="s5">·</span></p>
-<p class="p10"><span class="s5">DAILY PRACTICE</span></p>
-<p class="p11"><span class="s5">·</span></p>
-<p class="p11"><span class="s5">GOAL TRACKING</span></p>
-<p class="p11"><span class="s5">·</span></p>
-<p class="p10"><span class="s5">STREAK ACCOUNTABILITY</span></p>
-<p class="p11"><span class="s5">·</span></p>
-<p class="p11"><span class="s5">CLOSE-CIRCLE SOCIAL</span></p>
-<p class="p11"><span class="s5">·</span></p>
-<p class="p10"><span class="s5">NO ALGORITHMS</span></p>
-<p class="p11"><span class="s5">·</span></p>
-<p class="p11"><span class="s5">SHARED CHALLENGES</span></p>
-<p class="p11"><span class="s5">·</span></p>
-<p class="p10"><span class="s5">REAL PROGRESS</span></p>
-<p class="p11"><span class="s5">·</span></p>
-<p class="p11"><span class="s5">NO VANITY METRICS</span></p>
-<p class="p11"><span class="s5">·</span></p>
-<p class="p12"><span class="s3">WHY CATA</span></p>
-<h2 style="margin: 0.0px 0.0px 64.0px 0.0px; font: 36.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">Social media for the life you're actually building.</span></h2>
-<p class="p2"><span class="s6">01</span></p>
-<p class="p14"><span class="s7">🎯</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s6">Your goals, your rules</span></h3>
-<p class="p16"><span class="s6">Define any goal in any domain — fitness, reading, a creative habit, a skill. The app structures it; you own it.</span></p>
-<p class="p2"><span class="s6">02</span></p>
-<p class="p14"><span class="s7">🔥</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s6">Streaks that stick</span></h3>
-<p class="p16"><span class="s6">One tap to check in. Consecutive days build a streak. Miss one? Rest days and grace periods keep it human.</span></p>
-<p class="p2"><span class="s6">03</span></p>
-<p class="p14"><span class="s7">👥</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s6">Your circle, passively</span></h3>
-<p class="p16"><span class="s6">Friends' streaks appear quietly in your feed. No likes, no follower counts. Just the people you actually know, showing up.</span></p>
-<p class="p17"><span class="s3"></span><br></p>
-<p class="p18"><span class="s5">HOW IT WORKS</span></p>
-<h2 style="margin: 0.0px 0.0px 80.0px 0.0px; font: 36.0px 'Helvetica Neue'; color: #f2efe9; -webkit-text-stroke: #f2efe9"><span class="s5">Two loops. One habit.</span></h2>
-<p class="p20"><span class="s5">01</span></p>
-<p class="p21"><span class="s8">DAILY HABIT LOOP</span></p>
-<h3 style="margin: 0.0px 0.0px 10.0px 0.0px; font: 26.0px 'Helvetica Neue'; color: #f2efe9; -webkit-text-stroke: #f2efe9"><span class="s5">Set your goal</span></h3>
-<p class="p23"><span class="s5">Pick anything. Run 3 miles. Read 20 pages. Write 200 words. The app gives you structure — you decide the practice.</span></p>
-<p class="p20"><span class="s5">02</span></p>
-<p class="p21"><span class="s8">DAILY HABIT LOOP</span></p>
-<h3 style="margin: 0.0px 0.0px 10.0px 0.0px; font: 26.0px 'Helvetica Neue'; color: #f2efe9; -webkit-text-stroke: #f2efe9"><span class="s5">Check in daily</span></h3>
-<p class="p23"><span class="s5">One tap. That's it. Your streak grows. A notification reminds you if you haven't checked in by evening.</span></p>
-<p class="p20"><span class="s5">03</span></p>
-<p class="p24"><span class="s9">SOCIAL LOOP</span></p>
-<h3 style="margin: 0.0px 0.0px 10.0px 0.0px; font: 26.0px 'Helvetica Neue'; color: #f2efe9; -webkit-text-stroke: #f2efe9"><span class="s5">Your circle sees it</span></h3>
-<p class="p23"><span class="s5">Friends passively see your streaks. No posting required. Accountability happens without anyone asking for it.</span></p>
-<p class="p20"><span class="s5">04</span></p>
-<p class="p24"><span class="s9">SOCIAL LOOP</span></p>
-<h3 style="margin: 0.0px 0.0px 10.0px 0.0px; font: 26.0px 'Helvetica Neue'; color: #f2efe9; -webkit-text-stroke: #f2efe9"><span class="s5">Do it together</span></h3>
-<p class="p23"><span class="s5">Invite a friend to join the same goal. Shared challenges turn individual habits into something you build as a pair.</span></p>
-<p class="p12"><span class="s3">THE IDEA</span></p>
-<h2 style="margin: 0.0px 0.0px 24.0px 0.0px; font: 36.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">Built different by design.</span></h2>
-<p class="p26"><span class="s3">Every other social app is engineered to maximize your time on screen. Cata is engineered to maximize your time off it — doing the things you said you would.</span></p>
-<p class="p26"><span class="s3">No infinite scroll. No algorithmic feed. No follower counts. Just your goals, your streak, and the people who matter.</span></p>
-<p class="p27"><span class="s3">1</span></p>
-<p class="p28"><span class="s3">tap to check in</span></p>
-<p class="p27"><span class="s3">∞</span></p>
-<p class="p28"><span class="s3">goal types supported</span></p>
-<p class="p27"><span class="s3">0</span></p>
-<p class="p28"><span class="s3">ads. ever.</span></p>
-<p class="p29"><span class="s3"></span><br></p>
-<p class="p30"><span class="s10">TODAY</span></p>
-<p class="p31"><span class="s7">14</span></p>
-<p class="p32"><span class="s7">day streak </span><span class="s11">🔥</span></p>
-<p class="p33"><span class="s3"></span><br></p>
-<p class="p11"><span class="s12">Morning run</span></p>
-<p class="p34"><span class="s12">14d</span></p>
-<p class="p35"><span class="s3"></span><br></p>
-<p class="p11"><span class="s12">Read 20 pages</span></p>
-<p class="p34"><span class="s12">7d</span></p>
-<p class="p36"><span class="s3"></span><br></p>
-<p class="p11"><span class="s12">Spanish practice</span></p>
-<p class="p34"><span class="s12">3d</span></p>
-<p class="p37"><span class="s10">YOUR CIRCLE</span></p>
-<p class="p38"><span class="s7">JM</span></p>
-<p class="p39"><span class="s13">Jamie</span><span class="s10"> is on a 21d streak</span></p>
-<p class="p38"><span class="s14">SK</span></p>
-<p class="p39"><span class="s13">Sam</span><span class="s10"> checked in today</span></p>
-<p class="p17"><span class="s3"></span><br></p>
-<h2 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 42.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">Privacy Policy</span></h2>
-<p class="p41"><span class="s3">Effective date: May 8, 2026  ·  Last updated: May 8, 2026</span></p>
-<p class="p41"><span class="s3">Cata ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share information about you when you use our mobile application and website (collectively, the "Service").</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">Information we collect</span></h3>
-<p class="p41"><span class="s3">We collect information you provide directly to us, including:</span></p>
-<ul class="ul1">
-  <li class="li42"><span class="s15"></span><span class="s3">Account information: your name, email address, and password when you create an account</span></li>
-  <li class="li42"><span class="s15"></span><span class="s3">Profile information: display name and optional profile photo</span></li>
-  <li class="li42"><span class="s15"></span><span class="s3">Goal and activity data: the goals you set, your daily check-in history, and streak data</span></li>
-  <li class="li42"><span class="s15"></span><span class="s3">Contact information: if you choose to connect with friends, we access your contacts only with your explicit permission</span></li>
-  <li class="li42"><span class="s15"></span><span class="s3">Communications: messages or feedback you send to us</span></li>
-</ul>
-<p class="p41"><span class="s3">We also collect certain information automatically when you use the Service, including device type, operating system version, app version, and usage analytics (such as which features you use and how often).</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">How we use your information</span></h3>
-<p class="p41"><span class="s3">We use the information we collect to:</span></p>
-<ul class="ul1">
-  <li class="li42"><span class="s15"></span><span class="s3">Provide, maintain, and improve the Service</span></li>
-  <li class="li42"><span class="s15"></span><span class="s3">Send you streak reminders and push notifications (which you can disable at any time)</span></li>
-  <li class="li42"><span class="s15"></span><span class="s3">Enable the social features of the app, such as showing your friends' streaks in their feed</span></li>
-  <li class="li42"><span class="s15"></span><span class="s3">Respond to your comments and questions</span></li>
-  <li class="li42"><span class="s15"></span><span class="s3">Monitor and analyze usage trends to improve the user experience</span></li>
-  <li class="li42"><span class="s15"></span><span class="s3">Detect and prevent fraudulent or unauthorized activity</span></li>
-</ul>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">Information sharing</span></h3>
-<p class="p41"><span class="s3">We do not sell your personal information. We do not share your personal information with third parties except in the following limited circumstances:</span></p>
-<ul class="ul1">
-  <li class="li42"><span class="s15"></span><span class="s3">With your consent: for example, when you connect with friends on the platform</span></li>
-  <li class="li42"><span class="s15"></span><span class="s3">Service providers: we use third-party vendors (such as cloud hosting and analytics providers) who process data on our behalf under strict confidentiality agreements</span></li>
-  <li class="li42"><span class="s15"></span><span class="s3">Legal requirements: if required by law or to protect the rights and safety of our users</span></li>
-</ul>
-<p class="p41"><span class="s3">Your goal data and streak history are visible only to you and the friends you explicitly add. We never share your personal goals publicly.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">Data retention</span></h3>
-<p class="p41"><span class="s3">We retain your account information and activity data for as long as your account is active. You may delete your account at any time from the app's settings, which will permanently delete all associated data within 30 days.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">Your rights</span></h3>
-<p class="p41"><span class="s3">You have the right to access, correct, or delete the personal information we hold about you. You may also request a copy of your data or withdraw consent for certain processing activities. To exercise these rights, contact us at the email address below.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">Children's privacy</span></h3>
-<p class="p41"><span class="s3">Cata is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If we learn that we have collected such information, we will delete it promptly.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">Changes to this policy</span></h3>
-<p class="p41"><span class="s3">We may update this Privacy Policy from time to time. We will notify you of material changes by posting the new policy in the app and updating the effective date above.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">Contact us</span></h3>
-<p class="p41"><span class="s3">If you have any questions about this Privacy Policy, please contact us at tleegolf@yahoo.com.</span></p>
-<p class="p17"><span class="s3"></span><br></p>
-<h2 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 42.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">Support</span></h2>
-<p class="p41"><span class="s3">We're a small team — we read every message.</span></p>
-<p class="p43"><span class="s6">✉️</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s6">Email support</span></h4>
-<p class="p45"><span class="s6">For account issues, bug reports, or general questions. We aim to respond within 24 hours.</span><span class="s3"><br>
-<br>
-<a href="mailto:support@cataapp.com"><span class="s16">tleegolf@yahoo.</span></a></span><span class="s17">com</span></p>
-<p class="p43"><span class="s6">💬</span></p>
-<h4 style="margin: 0.0px 0.0px 8.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s6">Feature requests</span></h4>
-<p class="p45"><span class="s6">Have an idea that would make Cata better? We'd genuinely love to hear it.</span><span class="s3"><br>
-<br>
-<a href="mailto:hello@cataapp.com"><span class="s16">tleegolf@yahoo.com</span></a></span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 22.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">Frequently asked questions</span></h3>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 17.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">How do I delete my account?</span></h3>
-<p class="p41"><span class="s3">Go to Settings → Account → Delete Account. This permanently removes all your data within 30 days. This action cannot be undone.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 17.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">Can I recover a broken streak?</span></h3>
-<p class="p41"><span class="s3">Yes — Cata includes rest days and a grace period mechanic so one missed day doesn't erase your progress. Check the streak settings in your goal to configure your rest day preferences.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 17.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">Who can see my goals?</span></h3>
-<p class="p41"><span class="s3">Only friends you explicitly add can see your streak activity. Your goals are never visible publicly, and you can remove a friend at any time to stop sharing with them.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 17.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">How do I turn off notifications?</span></h3>
-<p class="p41"><span class="s3">Go to Settings → Notifications to customize or disable streak reminders. You can also manage notification permissions through your iPhone's Settings app.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 17.0px 'Helvetica Neue'; color: #0c0c0c; -webkit-text-stroke: #0c0c0c"><span class="s3">Is Cata free?</span></h3>
-<p class="p41"><span class="s3">Cata is free to download and use. We plan to introduce optional premium features in the future — core functionality will always remain free.</span></p>
-<p class="p47"><span class="s5">Cata</span></p>
-<ul class="ul1">
-  <li class="li48"><span class="s18"></span><span class="s5">Features</span></li>
-  <li class="li48"><span class="s18"></span><span class="s5">Privacy Policy</span></li>
-  <li class="li48"><span class="s18"></span><span class="s5">Support</span></li>
-  <li class="li48"><span class="s18"><a href="mailto:hello@cataapp.com"><span class="s3">Contact</span></a></span></li>
-</ul>
-<p class="p49"><span class="s5">© 2025 Cata. All rights reserved.</span></p>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#home">Cata</a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#privacy">Privacy</a></li>
+    <li><a href="#support">Support</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-tag">Coming soon to iOS</div>
+  <h1>Build habits.<br><em>Together.</em></h1>
+  <p class="hero-sub">Set your goals, show up every day, and watch your circle do the same. No feeds. No filters. Just streaks that mean something.</p>
+  <div class="hero-cta">
+    <a href="#support" class="btn-primary">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L13 7L7 13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Get early access
+    </a>
+    <a href="#how" class="btn-secondary">See how it works →</a>
+  </div>
+  <div class="hero-scroll">Scroll to explore</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span class="accent">Daily practice</span><span>·</span>
+    <span>Goal tracking</span><span>·</span>
+    <span class="accent">Streak accountability</span><span>·</span>
+    <span>Close-circle social</span><span>·</span>
+    <span class="accent">No algorithms</span><span>·</span>
+    <span>Shared challenges</span><span>·</span>
+    <span class="accent">Real progress</span><span>·</span>
+    <span>No vanity metrics</span><span>·</span>
+    <!-- duplicate for seamless loop -->
+    <span class="accent">Daily practice</span><span>·</span>
+    <span>Goal tracking</span><span>·</span>
+    <span class="accent">Streak accountability</span><span>·</span>
+    <span>Close-circle social</span><span>·</span>
+    <span class="accent">No algorithms</span><span>·</span>
+    <span>Shared challenges</span><span>·</span>
+    <span class="accent">Real progress</span><span>·</span>
+    <span>No vanity metrics</span><span>·</span>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <p class="section-label">Why Cata</p>
+  <h2 class="section-title">Social media for the life you're actually building.</h2>
+  <div class="features-grid">
+    <div class="feat-card">
+      <div class="feat-num">01</div>
+      <div class="feat-icon">🎯</div>
+      <h3 class="feat-title">Your goals, your rules</h3>
+      <p class="feat-desc">Define any goal in any domain — fitness, reading, a creative habit, a skill. The app structures it; you own it.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-num">02</div>
+      <div class="feat-icon">🔥</div>
+      <h3 class="feat-title">Streaks that stick</h3>
+      <p class="feat-desc">One tap to check in. Consecutive days build a streak. Miss one? Rest days and grace periods keep it human.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-num">03</div>
+      <div class="feat-icon">👥</div>
+      <h3 class="feat-title">Your circle, passively</h3>
+      <p class="feat-desc">Friends' streaks appear quietly in your feed. No likes, no follower counts. Just the people you actually know, showing up.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1">
+    <p class="section-label">How it works</p>
+    <h2 class="section-title">Two loops. One habit.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <span class="step-tag tag-green">Daily habit loop</span>
+        <h3 class="step-title">Set your goal</h3>
+        <p class="step-desc">Pick anything. Run 3 miles. Read 20 pages. Write 200 words. The app gives you structure — you decide the practice.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <span class="step-tag tag-green">Daily habit loop</span>
+        <h3 class="step-title">Check in daily</h3>
+        <p class="step-desc">One tap. That's it. Your streak grows. A notification reminds you if you haven't checked in by evening.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <span class="step-tag tag-orange">Social loop</span>
+        <h3 class="step-title">Your circle sees it</h3>
+        <p class="step-desc">Friends passively see your streaks. No posting required. Accountability happens without anyone asking for it.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <span class="step-tag tag-orange">Social loop</span>
+        <h3 class="step-title">Do it together</h3>
+        <p class="step-desc">Invite a friend to join the same goal. Shared challenges turn individual habits into something you build as a pair.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof">
+  <div class="proof-text">
+    <p class="section-label">The idea</p>
+    <h2 class="section-title">Built different by design.</h2>
+    <p class="proof-body">Every other social app is engineered to maximize your time on screen. Cata is engineered to maximize your time off it — doing the things you said you would.</p>
+    <p class="proof-body">No infinite scroll. No algorithmic feed. No follower counts. Just your goals, your streak, and the people who matter.</p>
+    <div class="stat-row">
+      <div>
+        <div class="stat-val">1</div>
+        <div class="stat-label">tap to check in</div>
+      </div>
+      <div>
+        <div class="stat-val">∞</div>
+        <div class="stat-label">goal types supported</div>
+      </div>
+      <div>
+        <div class="stat-val">0</div>
+        <div class="stat-label">ads. ever.</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="phone-mock">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="phone-header">Today</div>
+        <div class="streak-card">
+          <div class="streak-num">14</div>
+          <div class="streak-label">day streak 🔥</div>
+        </div>
+        <div class="goal-item">
+          <div class="goal-dot" style="background:#c8ff57"></div>
+          <span class="goal-name">Morning run</span>
+          <span class="goal-streak">14d</span>
+        </div>
+        <div class="goal-item">
+          <div class="goal-dot" style="background:#ff6b35"></div>
+          <span class="goal-name">Read 20 pages</span>
+          <span class="goal-streak">7d</span>
+        </div>
+        <div class="goal-item">
+          <div class="goal-dot" style="background:#a78bfa"></div>
+          <span class="goal-name">Spanish practice</span>
+          <span class="goal-streak">3d</span>
+        </div>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.08)">
+          <div style="font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,242,237,0.3);margin-bottom:10px">Your circle</div>
+          <div class="friend-row">
+            <div class="friend-av" style="background:#c8ff57">JM</div>
+            <div class="friend-info"><b>Jamie</b> is on a 21d streak</div>
+          </div>
+          <div class="friend-row" style="margin-top:8px">
+            <div class="friend-av" style="background:#ff6b35">SK</div>
+            <div class="friend-info"><b>Sam</b> checked in today</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PRIVACY POLICY -->
+<section class="legal-section" id="privacy">
+  <h2>Privacy Policy</h2>
+  <p class="legal-date">Effective date: January 1, 2025 &nbsp;·&nbsp; Last updated: January 1, 2025</p>
+
+  <p>Cata ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share information about you when you use our mobile application and website (collectively, the "Service").</p>
+
+  <h3>Information we collect</h3>
+  <p>We collect information you provide directly to us, including:</p>
+  <ul>
+    <li>Account information: your name, email address, and password when you create an account</li>
+    <li>Profile information: display name and optional profile photo</li>
+    <li>Goal and activity data: the goals you set, your daily check-in history, and streak data</li>
+    <li>Contact information: if you choose to connect with friends, we access your contacts only with your explicit permission</li>
+    <li>Communications: messages or feedback you send to us</li>
+  </ul>
+  <p>We also collect certain information automatically when you use the Service, including device type, operating system version, app version, and usage analytics (such as which features you use and how often).</p>
+
+  <h3>How we use your information</h3>
+  <p>We use the information we collect to:</p>
+  <ul>
+    <li>Provide, maintain, and improve the Service</li>
+    <li>Send you streak reminders and push notifications (which you can disable at any time)</li>
+    <li>Enable the social features of the app, such as showing your friends' streaks in their feed</li>
+    <li>Respond to your comments and questions</li>
+    <li>Monitor and analyze usage trends to improve the user experience</li>
+    <li>Detect and prevent fraudulent or unauthorized activity</li>
+  </ul>
+
+  <h3>Information sharing</h3>
+  <p>We do not sell your personal information. We do not share your personal information with third parties except in the following limited circumstances:</p>
+  <ul>
+    <li><strong>With your consent:</strong> for example, when you connect with friends on the platform</li>
+    <li><strong>Service providers:</strong> we use third-party vendors (such as cloud hosting and analytics providers) who process data on our behalf under strict confidentiality agreements</li>
+    <li><strong>Legal requirements:</strong> if required by law or to protect the rights and safety of our users</li>
+  </ul>
+  <p>Your goal data and streak history are visible only to you and the friends you explicitly add. We never share your personal goals publicly.</p>
+
+  <h3>Data retention</h3>
+  <p>We retain your account information and activity data for as long as your account is active. You may delete your account at any time from the app's settings, which will permanently delete all associated data within 30 days.</p>
+
+  <h3>Your rights</h3>
+  <p>You have the right to access, correct, or delete the personal information we hold about you. You may also request a copy of your data or withdraw consent for certain processing activities. To exercise these rights, contact us at the email address below.</p>
+
+  <h3>Children's privacy</h3>
+  <p>Cata is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If we learn that we have collected such information, we will delete it promptly.</p>
+
+  <h3>Changes to this policy</h3>
+  <p>We may update this Privacy Policy from time to time. We will notify you of material changes by posting the new policy in the app and updating the effective date above.</p>
+
+  <h3>Contact us</h3>
+  <p>If you have any questions about this Privacy Policy, please contact us at <strong>tleegolf@yahoo.com</strong>.</p>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SUPPORT -->
+<section class="legal-section" id="support">
+  <h2>Support</h2>
+  <p class="legal-date">We're a small team — we read every message.</p>
+
+  <div class="support-grid">
+    <div class="support-card">
+      <div class="support-icon">✉️</div>
+      <h4>Email support</h4>
+      <p>For account issues, bug reports, or general questions. We aim to respond within 24 hours.<br><br><a href="mailto:tleegolf@yahoo.com">tleegolf@yahoo.com</a></p>
+    </div>
+    <div class="support-card">
+      <div class="support-icon">💬</div>
+      <h4>Feature requests</h4>
+      <p>Have an idea that would make Cata better? We'd genuinely love to hear it.<br><br><a href="mailto:tleegolf@yahoo.com">tleegolf@yahoo.com</a></p>
+    </div>
+  </div>
+
+  <h3>Frequently asked questions</h3>
+
+  <h3 style="font-size:17px;margin-top:24px">How do I delete my account?</h3>
+  <p>Go to Settings → Account → Delete Account. This permanently removes all your data within 30 days. This action cannot be undone.</p>
+
+  <h3 style="font-size:17px;margin-top:24px">Can I recover a broken streak?</h3>
+  <p>Yes — Cata includes rest days and a grace period mechanic so one missed day doesn't erase your progress. Check the streak settings in your goal to configure your rest day preferences.</p>
+
+  <h3 style="font-size:17px;margin-top:24px">Who can see my goals?</h3>
+  <p>Only friends you explicitly add can see your streak activity. Your goals are never visible publicly, and you can remove a friend at any time to stop sharing with them.</p>
+
+  <h3 style="font-size:17px;margin-top:24px">How do I turn off notifications?</h3>
+  <p>Go to Settings → Notifications to customize or disable streak reminders. You can also manage notification permissions through your iPhone's Settings app.</p>
+
+  <h3 style="font-size:17px;margin-top:24px">Is Cata free?</h3>
+  <p>Cata is free to download and use. We plan to introduce optional premium features in the future — core functionality will always remain free.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a class="footer-logo" href="#home">Cata</a>
+  <ul class="footer-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#privacy">Privacy Policy</a></li>
+    <li><a href="#support">Support</a></li>
+    <li><a href="mailto:tleegolf@yahoo.com">Contact</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 Cata. All rights reserved.</span>
+</footer>
+
 </body>
 </html>
