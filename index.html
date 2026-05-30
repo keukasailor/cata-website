@@ -3,490 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cata — Build habits. Together.</title>
+<title>Cata — This is your life, fill it well.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #0e0e0e;
-    --paper: #f5f2ed;
-    --accent: #c8ff57;
-    --accent2: #ff6b35;
-    --muted: #6b6860;
-    --border: rgba(14,14,14,0.12);
-    --card: #ffffff;
-    --serif: 'DM Serif Display', Georgia, serif;
-    --sans: 'DM Sans', sans-serif;
-  }
+:root {
+  --bg:#f5f4f0;--surface:#ffffff;--border:#e8e6e1;
+  --text:#1a1a1a;--muted:#888880;--faint:#c8c6c0;
+  --accent:#c9973e;--accent-light:#fff8ee;--accent-dark:#a07830;
+  --success:#2d9e6b;
+  --serif:'Playfair Display',Georgia,serif;
+  --lora:'Lora',Georgia,serif;
+  --sans:'DM Sans',Helvetica Neue,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:16px;line-height:1.6;overflow-x:hidden}
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(245,244,240,0.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--serif);font-size:22px;letter-spacing:-0.02em;color:var(--text);text-decoration:none}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:.02em;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
 
-  html { scroll-behavior: smooth; }
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px;padding:120px 48px 80px;max-width:1240px;margin:0 auto}
+.hero-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-light);border:1px solid #f0ddb0;border-radius:20px;padding:5px 14px;margin-bottom:28px;width:fit-content;opacity:0;animation:fadeUp .6s .2s ease forwards}
+.hero h1{font-family:var(--serif);font-size:clamp(44px,5.5vw,76px);line-height:.97;letter-spacing:-0.03em;margin-bottom:20px;opacity:0;animation:fadeUp .7s .35s ease forwards}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-sub{font-family:var(--lora);font-size:17px;font-style:italic;color:var(--muted);max-width:420px;margin-bottom:36px;line-height:1.7;opacity:0;animation:fadeUp .7s .5s ease forwards}
+.hero-cta{display:flex;gap:14px;align-items:center;opacity:0;animation:fadeUp .7s .65s ease forwards}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--text);color:var(--bg);font-family:var(--sans);font-size:13px;font-weight:600;padding:13px 26px;border-radius:40px;text-decoration:none;transition:transform .2s,background .2s;border:none;cursor:pointer;letter-spacing:.02em}
+.btn-primary:hover{background:#2a2a2a;transform:translateY(-1px)}
+.btn-secondary{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;padding:13px 0;transition:color .2s}
+.btn-secondary:hover{color:var(--text)}
 
-  body {
-    font-family: var(--sans);
-    background: var(--paper);
-    color: var(--ink);
-    font-size: 16px;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
+/* PHONE */
+.phone-wrap{display:flex;justify-content:center;align-items:center;opacity:0;animation:fadeUp .8s .5s ease forwards}
+.phone-mock{width:268px;background:#111010;border-radius:38px;padding:16px;aspect-ratio:9/19.5;position:relative;box-shadow:0 40px 80px rgba(0,0,0,0.22),0 0 0 1px rgba(255,255,255,0.07),inset 0 1px 0 rgba(255,255,255,0.07)}
+.phone-notch{width:72px;height:18px;background:#111010;border-radius:0 0 12px 12px;margin:0 auto 10px;position:relative;z-index:2}
+.phone-screen{background:#1c1b18;border-radius:24px;height:calc(100% - 28px);padding:14px 13px 10px;overflow:hidden;font-family:var(--sans);display:flex;flex-direction:column;gap:0}
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 20px 48px;
-    background: rgba(245,242,237,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo {
-    font-family: var(--serif);
-    font-size: 22px;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--muted);
-    text-decoration: none;
-    letter-spacing: .02em;
-    transition: color .2s;
-  }
-  .nav-links a:hover { color: var(--ink); }
+/* phone atoms */
+.p-date{font-size:8px;color:rgba(200,198,192,.4);letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px}
+.p-greeting{font-family:var(--serif);font-size:15px;font-weight:700;color:#f5f4f0;line-height:1.2;margin-bottom:2px}
+.p-motto{font-family:var(--lora);font-size:9px;font-style:italic;color:rgba(200,198,192,.45);margin-bottom:9px}
+.p-prog-wrap{margin-bottom:10px}
+.p-prog-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:3px}
+.p-prog-label{font-size:7.5px;color:rgba(200,198,192,.35);letter-spacing:.09em;text-transform:uppercase}
+.p-prog-count{font-family:var(--serif);font-size:12px;font-weight:700;color:#f5f4f0}
+.p-prog-bar{height:2.5px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden}
+.p-prog-fill{height:100%;border-radius:99px;background:var(--accent);width:66%}
+.p-section{font-size:7.5px;color:rgba(200,198,192,.35);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;margin-top:2px}
 
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 120px 48px 80px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-bg {
-    position: absolute; inset: 0; z-index: 0;
-    background:
-      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(200,255,87,0.18) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(255,107,53,0.10) 0%, transparent 70%);
-  }
-  .hero-tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 5px 14px;
-    margin-bottom: 36px;
-    position: relative; z-index: 1;
-    width: fit-content;
-    opacity: 0;
-    animation: fadeUp .6s .2s ease forwards;
-  }
-  .hero h1 {
-    font-family: var(--serif);
-    font-size: clamp(52px, 8vw, 112px);
-    line-height: .95;
-    letter-spacing: -0.03em;
-    max-width: 900px;
-    position: relative; z-index: 1;
-    opacity: 0;
-    animation: fadeUp .7s .35s ease forwards;
-  }
-  .hero h1 em {
-    font-style: italic;
-    color: var(--accent2);
-  }
-  .hero-sub {
-    font-size: 18px;
-    font-weight: 300;
-    color: var(--muted);
-    max-width: 480px;
-    margin-top: 28px;
-    line-height: 1.6;
-    position: relative; z-index: 1;
-    opacity: 0;
-    animation: fadeUp .7s .5s ease forwards;
-  }
-  .hero-cta {
-    display: flex; gap: 14px; align-items: center;
-    margin-top: 44px;
-    position: relative; z-index: 1;
-    opacity: 0;
-    animation: fadeUp .7s .65s ease forwards;
-  }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--ink);
-    color: var(--paper);
-    font-family: var(--sans);
-    font-size: 14px;
-    font-weight: 500;
-    padding: 14px 28px;
-    border-radius: 40px;
-    text-decoration: none;
-    transition: transform .2s, background .2s;
-    border: none; cursor: pointer;
-  }
-  .btn-primary:hover { background: #1a1a1a; transform: translateY(-1px); }
-  .btn-secondary {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--muted);
-    text-decoration: none;
-    padding: 14px 0;
-  }
-  .hero-scroll {
-    position: absolute; bottom: 40px; left: 48px;
-    font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
-    color: var(--muted); z-index: 1;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .hero-scroll::before {
-    content: ''; width: 32px; height: 1px; background: var(--muted);
-  }
+/* goal card in phone */
+.g-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:8px 10px;margin-bottom:5px}
+.g-top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.g-check{width:16px;height:16px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:8px;color:#fff}
+.g-check.done{background:var(--accent)}
+.g-check.open{background:transparent;border:1.5px solid rgba(201,151,62,.4)}
+.g-name{font-size:9.5px;font-weight:600;color:#f5f4f0;flex:1}
+.g-why{font-size:8px;font-style:italic;font-family:var(--lora);color:rgba(200,198,192,.38);margin-bottom:6px;margin-left:24px}
 
-  /* MARQUEE */
-  .marquee-wrap {
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    background: var(--ink);
-    overflow: hidden;
-    padding: 14px 0;
-  }
-  .marquee {
-    display: flex; gap: 48px;
-    animation: marquee 18s linear infinite;
-    white-space: nowrap;
-  }
-  .marquee span {
-    font-size: 12px; font-weight: 500; letter-spacing: .08em;
-    text-transform: uppercase; color: var(--paper); opacity: .6;
-    flex-shrink: 0;
-  }
-  .marquee span.accent { color: var(--accent); opacity: 1; }
-  @keyframes marquee { to { transform: translateX(-50%); } }
+/* momentum grid in phone */
+.mg-row{display:flex;gap:3px;flex-wrap:wrap;margin-left:24px}
+.wk{width:20px;height:20px;border-radius:50%;border:1px solid rgba(232,214,184,.25);background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5px;flex-shrink:0}
+.wk.full{background:rgba(201,151,62,.12);border-color:rgba(201,151,62,.5)}
+.wk.part{background:rgba(255,255,255,.03);border-color:rgba(232,214,184,.2)}
+.dot-row{display:flex;gap:1.5px}
+.dot{width:3.5px;height:3.5px;border-radius:50%;border:1px solid rgba(201,151,62,.25)}
+.dot.filled{background:var(--accent);border-color:var(--accent)}
+.dot.today{border-color:rgba(201,151,62,.7);background:transparent}
+.dot.missed{border-color:rgba(200,198,192,.2);background:transparent}
+.dot.future{border-color:rgba(200,198,192,.1);background:transparent}
 
-  /* FEATURES */
-  .features {
-    padding: 100px 48px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .section-label {
-    font-size: 11px; font-weight: 500; letter-spacing: .1em;
-    text-transform: uppercase; color: var(--muted);
-    margin-bottom: 16px;
-  }
-  .section-title {
-    font-family: var(--serif);
-    font-size: clamp(36px, 4vw, 56px);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin-bottom: 64px;
-    max-width: 600px;
-  }
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-  }
-  .feat-card {
-    background: var(--card);
-    padding: 36px 32px;
-    transition: background .2s;
-  }
-  .feat-card:hover { background: #fafaf7; }
-  .feat-card:first-child { border-radius: 16px 0 0 16px; }
-  .feat-card:last-child { border-radius: 0 16px 16px 0; }
-  .feat-num {
-    font-family: var(--serif);
-    font-size: 13px; color: var(--muted);
-    margin-bottom: 24px;
-  }
-  .feat-icon {
-    width: 40px; height: 40px;
-    background: var(--accent);
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 20px;
-    font-size: 18px;
-  }
-  .feat-title {
-    font-family: var(--serif);
-    font-size: 22px;
-    letter-spacing: -0.01em;
-    margin-bottom: 12px;
-    line-height: 1.2;
-  }
-  .feat-desc {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.65;
-  }
+/* brief card in phone */
+.brief-card{background:#f5eed8;border-radius:9px;padding:9px 10px;margin-top:6px;flex-shrink:0}
+.brief-lbl{font-size:7px;letter-spacing:.1em;text-transform:uppercase;color:#a07830;margin-bottom:3px}
+.brief-name{font-family:var(--serif);font-size:10px;font-weight:700;color:#1a1a1a;margin-bottom:2px}
+.brief-txt{font-family:var(--lora);font-size:8px;font-style:italic;color:#888880;line-height:1.45}
 
-  /* HOW IT WORKS */
-  .how {
-    padding: 100px 48px;
-    background: var(--ink);
-    color: var(--paper);
-    overflow: hidden;
-    position: relative;
-  }
-  .how::before {
-    content: '';
-    position: absolute; top: -100px; right: -100px;
-    width: 500px; height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(200,255,87,0.08) 0%, transparent 70%);
-  }
-  .how .section-label { color: rgba(245,242,237,0.4); }
-  .how .section-title { color: var(--paper); margin-bottom: 80px; }
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 80px;
-    max-width: 900px;
-  }
-  .step { position: relative; }
-  .step-num {
-    font-family: var(--serif);
-    font-size: 72px;
-    color: rgba(245,242,237,0.06);
-    line-height: 1;
-    margin-bottom: -20px;
-    margin-left: -4px;
-  }
-  .step-title {
-    font-family: var(--serif);
-    font-size: 26px;
-    letter-spacing: -0.01em;
-    margin-bottom: 10px;
-    color: var(--paper);
-  }
-  .step-desc {
-    font-size: 14px;
-    color: rgba(245,242,237,0.5);
-    line-height: 1.65;
-  }
-  .step-tag {
-    display: inline-block;
-    font-size: 10px; font-weight: 500; letter-spacing: .08em;
-    text-transform: uppercase;
-    padding: 3px 10px; border-radius: 20px;
-    margin-bottom: 10px;
-  }
-  .tag-green { background: rgba(200,255,87,0.15); color: var(--accent); }
-  .tag-orange { background: rgba(255,107,53,0.15); color: #ff8f65; }
+/* MARQUEE */
+.marquee-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--text);overflow:hidden;padding:12px 0}
+.marquee{display:flex;gap:40px;animation:marquee 22s linear infinite;white-space:nowrap}
+.marquee span{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,244,240,.4);flex-shrink:0}
+.marquee span.accent{color:var(--accent)}
+@keyframes marquee{to{transform:translateX(-50%)}}
 
-  /* SOCIAL PROOF */
-  .proof {
-    padding: 100px 48px;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-  .proof-text .section-title { margin-bottom: 24px; }
-  .proof-body {
-    font-size: 16px; color: var(--muted); line-height: 1.7;
-    margin-bottom: 32px;
-  }
-  .stat-row { display: flex; gap: 40px; margin-top: 48px; }
-  .stat-val {
-    font-family: var(--serif);
-    font-size: 48px;
-    letter-spacing: -0.03em;
-    line-height: 1;
-    color: var(--ink);
-  }
-  .stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
-  .phone-mock {
-    background: var(--ink);
-    border-radius: 36px;
-    padding: 20px;
-    aspect-ratio: 9/19;
-    max-width: 280px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 40px 80px rgba(0,0,0,0.15);
-  }
-  .phone-notch {
-    width: 80px; height: 20px;
-    background: var(--ink);
-    border-radius: 0 0 14px 14px;
-    margin: 0 auto 16px;
-    position: relative; z-index: 2;
-  }
-  .phone-screen {
-    background: #1a1a1a;
-    border-radius: 24px;
-    height: calc(100% - 36px);
-    padding: 20px 16px;
-    overflow: hidden;
-  }
-  .phone-header {
-    font-size: 11px; font-weight: 500; letter-spacing: .06em;
-    text-transform: uppercase; color: rgba(245,242,237,0.3);
-    margin-bottom: 20px;
-  }
-  .streak-card {
-    background: var(--accent);
-    border-radius: 16px;
-    padding: 16px;
-    margin-bottom: 10px;
-  }
-  .streak-num {
-    font-family: var(--serif);
-    font-size: 42px; color: var(--ink); line-height: 1;
-  }
-  .streak-label { font-size: 11px; color: rgba(14,14,14,0.6); margin-top: 2px; }
-  .goal-item {
-    background: #252525;
-    border-radius: 12px;
-    padding: 12px 14px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .goal-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-  .goal-name { font-size: 12px; color: var(--paper); }
-  .goal-streak { font-size: 11px; color: rgba(245,242,237,0.4); margin-left: auto; }
-  .friend-row {
-    display: flex; gap: 6px; margin-top: 14px; align-items: center;
-  }
-  .friend-av {
-    width: 28px; height: 28px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 10px; font-weight: 500; color: var(--ink);
-    flex-shrink: 0;
-  }
-  .friend-info { font-size: 11px; color: rgba(245,242,237,0.5); }
-  .friend-info b { color: var(--paper); font-weight: 500; }
+/* SECTIONS */
+.features{padding:100px 48px;max-width:1200px;margin:0 auto}
+.section-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dark);background:var(--accent-light);border:1px solid #f0ddb0;display:inline-block;padding:3px 12px;border-radius:20px;margin-bottom:20px}
+.section-title{font-family:var(--serif);font-size:clamp(32px,3.5vw,50px);line-height:1.06;letter-spacing:-0.02em;margin-bottom:56px;max-width:580px}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.feat-card{background:var(--surface);padding:36px 30px;transition:background .2s}
+.feat-card:hover{background:#fdfaf5}
+.feat-card:first-child{border-radius:16px 0 0 16px}
+.feat-card:last-child{border-radius:0 16px 16px 0}
+.feat-num{font-family:var(--lora);font-size:11px;font-style:italic;color:var(--faint);margin-bottom:20px}
+.feat-icon{width:38px;height:38px;border-radius:10px;background:var(--accent-light);border:1px solid #f0ddb0;display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:18px}
+.feat-title{font-family:var(--serif);font-size:21px;letter-spacing:-0.01em;margin-bottom:10px;line-height:1.2}
+.feat-desc{font-size:14px;color:var(--muted);line-height:1.7;font-family:var(--lora)}
 
-  /* PRIVACY / SUPPORT SECTIONS */
-  .legal-section {
-    padding: 100px 48px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  .legal-section h2 {
-    font-family: var(--serif);
-    font-size: 42px;
-    letter-spacing: -0.02em;
-    margin-bottom: 12px;
-  }
-  .legal-date {
-    font-size: 13px; color: var(--muted);
-    margin-bottom: 48px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--border);
-  }
-  .legal-section h3 {
-    font-family: var(--serif);
-    font-size: 22px;
-    letter-spacing: -0.01em;
-    margin: 36px 0 12px;
-  }
-  .legal-section p {
-    font-size: 15px; color: var(--muted);
-    line-height: 1.75; margin-bottom: 14px;
-  }
-  .legal-section ul {
-    padding-left: 20px; margin-bottom: 14px;
-  }
-  .legal-section li {
-    font-size: 15px; color: var(--muted);
-    line-height: 1.75; margin-bottom: 6px;
-  }
+/* momentum showcase */
+.momentum-section{padding:100px 48px;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.momentum-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.momentum-demo{display:flex;flex-direction:column;gap:20px}
+.demo-goal{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.demo-goal-top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.demo-check{width:22px;height:22px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;flex-shrink:0}
+.demo-name{font-size:14px;font-weight:600;color:var(--text)}
+.demo-why{font-size:12px;font-style:italic;font-family:var(--lora);color:var(--muted);margin-bottom:12px;margin-left:32px}
+.demo-grid{display:flex;gap:6px;flex-wrap:wrap;margin-left:32px}
+.demo-wk{width:44px;height:44px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;flex-shrink:0;border:1.5px solid var(--border)}
+.demo-wk.full{background:var(--accent-light);border-color:var(--accent)}
+.demo-wk.part{background:#fdfaf4;border-color:#e8d9b8}
+.demo-wk.empty{background:var(--surface);border-color:var(--border)}
+.demo-dot-row{display:flex;gap:2.5px}
+.demo-dot{width:5px;height:5px;border-radius:50%;border:1px solid rgba(201,151,62,.25)}
+.demo-dot.f{background:var(--accent);border-color:var(--accent)}
+.demo-dot.t{border-color:rgba(201,151,62,.7)}
+.demo-dot.m{border-color:rgba(200,198,192,.3)}
+.demo-dot.e{border-color:rgba(200,198,192,.15)}
+.demo-days{font-size:11px;color:var(--faint);margin-top:6px;margin-left:32px}
 
-  /* SUPPORT */
-  .support-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin: 48px 0;
-  }
-  .support-card {
-    background: var(--card);
-    border-radius: 16px;
-    border: 1px solid var(--border);
-    padding: 28px 24px;
-  }
-  .support-icon { font-size: 28px; margin-bottom: 12px; }
-  .support-card h4 {
-    font-family: var(--serif);
-    font-size: 18px; margin-bottom: 8px;
-  }
-  .support-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
-  .support-card a { color: var(--ink); font-weight: 500; }
+/* HOW */
+.how{padding:100px 48px;background:var(--text);color:var(--bg);position:relative;overflow:hidden}
+.how::before{content:'';position:absolute;top:-80px;right:-80px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(201,151,62,.07) 0%,transparent 70%);pointer-events:none}
+.how .section-label{background:rgba(201,151,62,.12);border-color:rgba(201,151,62,.25);color:#e0b060}
+.how .section-title{color:var(--bg);margin-bottom:72px}
+.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:40px 80px;max-width:900px}
+.step-num{font-family:var(--serif);font-size:64px;color:rgba(245,244,240,.05);line-height:1;margin-bottom:-16px}
+.step-tag{display:inline-block;font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px}
+.tag-gold{background:rgba(201,151,62,.15);color:#e0b060}
+.tag-warm{background:rgba(45,158,107,.12);color:#5dc494}
+.step-title{font-family:var(--serif);font-size:24px;letter-spacing:-0.01em;margin-bottom:10px;color:var(--bg)}
+.step-desc{font-size:14px;color:rgba(245,244,240,.45);line-height:1.7;font-family:var(--lora)}
 
-  /* FOOTER */
-  footer {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 60px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 24px;
-  }
-  .footer-logo {
-    font-family: var(--serif);
-    font-size: 24px; color: var(--paper);
-    text-decoration: none;
-  }
-  .footer-links { display: flex; gap: 28px; list-style: none; }
-  .footer-links a {
-    font-size: 13px; color: rgba(245,242,237,0.4);
-    text-decoration: none; transition: color .2s;
-  }
-  .footer-links a:hover { color: var(--paper); }
-  .footer-copy { font-size: 12px; color: rgba(245,242,237,0.25); }
+/* BRIEF */
+.brief-section{padding:100px 48px;max-width:1200px;margin:0 auto}
+.brief-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.brief-preview{border-radius:16px;padding:24px 22px;transition:transform .2s,box-shadow .2s;cursor:default}
+.brief-preview:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.07)}
+.brief-preview:nth-child(1){background:#f5f0e8;border:1px solid #e8dcc8}
+.brief-preview:nth-child(2){background:#eef0f5;border:1px solid #d8dce8}
+.brief-preview:nth-child(3){background:#f0f5ee;border:1px solid #d0e0cc}
+.brief-type{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.brief-person{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:4px;letter-spacing:-0.01em}
+.brief-era{font-size:11px;color:var(--muted);margin-bottom:14px}
+.brief-excerpt{font-family:var(--lora);font-size:13px;font-style:italic;color:var(--muted);line-height:1.65}
 
-  /* DIVIDER */
-  .section-divider {
-    width: 100%; height: 1px;
-    background: var(--border);
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+/* STATS */
+.stats-section{padding:80px 48px;background:var(--bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.stat-item{text-align:center}
+.stat-val{font-family:var(--serif);font-size:56px;letter-spacing:-0.04em;line-height:1;color:var(--text)}
+.stat-label{font-size:12px;color:var(--muted);margin-top:6px;letter-spacing:.03em}
+.stat-sub{font-family:var(--lora);font-size:11px;font-style:italic;color:var(--faint);margin-top:3px}
 
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+/* LEGAL */
+.legal-section{padding:90px 48px;max-width:780px;margin:0 auto}
+.legal-section h2{font-family:var(--serif);font-size:40px;letter-spacing:-0.02em;margin-bottom:10px}
+.legal-date{font-size:13px;color:var(--muted);margin-bottom:44px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.legal-section h3{font-family:var(--serif);font-size:21px;letter-spacing:-0.01em;margin:32px 0 10px}
+.legal-section p{font-size:15px;color:var(--muted);line-height:1.78;margin-bottom:14px;font-family:var(--lora)}
+.legal-section ul{padding-left:20px;margin-bottom:14px}
+.legal-section li{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:6px;font-family:var(--lora)}
+.support-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:44px 0}
+.support-card{background:var(--surface);border-radius:14px;border:1px solid var(--border);padding:26px 22px}
+.support-icon{font-size:26px;margin-bottom:12px}
+.support-card h4{font-family:var(--serif);font-size:18px;margin-bottom:8px}
+.support-card p{font-size:13px;color:var(--muted);line-height:1.65;font-family:var(--lora)}
+.support-card a{color:var(--text);font-weight:500}
 
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    nav { padding: 16px 24px; }
-    .nav-links { display: none; }
-    .hero { padding: 100px 24px 60px; }
-    .hero-scroll { left: 24px; }
-    .marquee-wrap, .features, .how, .proof, .legal-section, footer { padding-left: 24px; padding-right: 24px; }
-    .features-grid { grid-template-columns: 1fr; gap: 2px; }
-    .feat-card:first-child { border-radius: 16px 16px 0 0; }
-    .feat-card:last-child { border-radius: 0 0 16px 16px; }
-    .steps { grid-template-columns: 1fr; gap: 32px; }
-    .proof { grid-template-columns: 1fr; gap: 48px; }
-    .support-grid { grid-template-columns: 1fr; }
-    .stat-row { gap: 24px; }
-  }
+.section-divider{width:100%;height:1px;background:var(--border);max-width:1200px;margin:0 auto}
+
+/* FOOTER */
+footer{background:var(--text);color:var(--bg);padding:56px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px}
+.footer-logo{font-family:var(--serif);font-size:22px;color:var(--bg);text-decoration:none}
+.footer-tagline{font-family:var(--lora);font-size:12px;font-style:italic;color:rgba(245,244,240,.35);margin-top:4px}
+.footer-links{display:flex;gap:26px;list-style:none}
+.footer-links a{font-size:13px;color:rgba(245,244,240,.35);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--bg)}
+.footer-copy{font-size:12px;color:rgba(245,244,240,.2)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:900px){
+  nav{padding:16px 24px}.nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:100px 24px 60px;gap:48px}
+  .phone-wrap{order:-1}.phone-mock{width:220px}
+  .features,.how,.brief-section,.stats-section,.momentum-section,.legal-section,footer{padding-left:24px;padding-right:24px}
+  .features-grid,.brief-cards{grid-template-columns:1fr;gap:2px}
+  .feat-card:first-child{border-radius:16px 16px 0 0}.feat-card:last-child{border-radius:0 0 16px 16px}
+  .steps,.momentum-inner{grid-template-columns:1fr;gap:32px}
+  .stats-inner{gap:20px}.stat-val{font-size:40px}
+  .support-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -496,227 +209,391 @@
   <a class="nav-logo" href="#home">Cata</a>
   <ul class="nav-links">
     <li><a href="#features">Features</a></li>
+    <li><a href="#momentum">Momentum</a></li>
     <li><a href="#how">How it works</a></li>
+    <li><a href="#brief">Daily brief</a></li>
     <li><a href="#privacy">Privacy</a></li>
     <li><a href="#support">Support</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-tag">Coming soon to iOS</div>
-  <h1>Build habits.<br><em>Together.</em></h1>
-  <p class="hero-sub">Set your goals, show up every day, and watch your circle do the same. No feeds. No filters. Just streaks that mean something.</p>
-  <div class="hero-cta">
-    <a href="#support" class="btn-primary">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L13 7L7 13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Get early access
-    </a>
-    <a href="#how" class="btn-secondary">See how it works →</a>
+<section id="home" style="background:var(--bg)">
+  <div class="hero">
+    <div>
+      <div class="hero-tag">Coming soon to iOS</div>
+      <h1>This is your life,<br><em>fill it well.</em></h1>
+      <p class="hero-sub">Build momentum, one day at a time. Watch your circle do the same. No feeds. No algorithms. Just progress that means something.</p>
+      <div class="hero-cta">
+        <a href="#support" class="btn-primary">
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 1L13 7L7 13M1 7H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Get early access
+        </a>
+        <a href="#how" class="btn-secondary">See how it works →</a>
+      </div>
+    </div>
+
+    <!-- Phone with momentum grid -->
+    <div class="phone-wrap">
+      <div class="phone-mock">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+
+          <div class="p-date">Fri, May 29</div>
+          <div class="p-greeting">Good morning, Tucker.</div>
+          <div class="p-motto">make your future self proud.</div>
+
+          <div class="p-prog-wrap">
+            <div class="p-prog-row">
+              <div class="p-prog-label">Today's catas</div>
+              <div class="p-prog-count">2 / 3</div>
+            </div>
+            <div class="p-prog-bar"><div class="p-prog-fill"></div></div>
+          </div>
+
+          <div class="p-section">Mine</div>
+
+          <!-- Goal 1: Read — fully checked, 4 full weeks shown -->
+          <div class="g-card">
+            <div class="g-top">
+              <div class="g-check done">✓</div>
+              <div class="g-name">Read 20 min</div>
+            </div>
+            <div class="g-why">"to think more clearly"</div>
+            <div class="mg-row">
+              <!-- week 1: full -->
+              <div class="wk full">
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div></div>
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div></div>
+              </div>
+              <!-- week 2: full -->
+              <div class="wk full">
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div></div>
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div></div>
+              </div>
+              <!-- week 3: partial (17 of 21 days) -->
+              <div class="wk part">
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div></div>
+                <div class="dot-row"><div class="dot today"></div><div class="dot future"></div></div>
+              </div>
+              <!-- week 4: future -->
+              <div class="wk empty">
+                <div class="dot-row"><div class="dot future"></div><div class="dot future"></div><div class="dot future"></div></div>
+                <div class="dot-row"><div class="dot future"></div><div class="dot future"></div></div>
+                <div class="dot-row"><div class="dot future"></div><div class="dot future"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Goal 2: Gratitudes — checked, 4 weeks -->
+          <div class="g-card">
+            <div class="g-top">
+              <div class="g-check done">✓</div>
+              <div class="g-name">Write 3 gratitudes</div>
+            </div>
+            <div class="g-why">"stay grounded"</div>
+            <div class="mg-row">
+              <div class="wk full">
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div></div>
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div></div>
+              </div>
+              <div class="wk full">
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div></div>
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div></div>
+              </div>
+              <div class="wk full">
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div></div>
+                <div class="dot-row"><div class="dot filled"></div><div class="dot today"></div></div>
+              </div>
+              <div class="wk empty">
+                <div class="dot-row"><div class="dot future"></div><div class="dot future"></div><div class="dot future"></div></div>
+                <div class="dot-row"><div class="dot future"></div><div class="dot future"></div></div>
+                <div class="dot-row"><div class="dot future"></div><div class="dot future"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Goal 3: No phone — unchecked, early -->
+          <div class="g-card">
+            <div class="g-top">
+              <div class="g-check open"></div>
+              <div class="g-name">No phone before 9am</div>
+            </div>
+            <div class="g-why">"mornings are mine"</div>
+            <div class="mg-row">
+              <div class="wk part">
+                <div class="dot-row"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+                <div class="dot-row"><div class="dot filled"></div><div class="dot missed"></div></div>
+                <div class="dot-row"><div class="dot today"></div><div class="dot future"></div></div>
+              </div>
+              <div class="wk empty">
+                <div class="dot-row"><div class="dot future"></div><div class="dot future"></div><div class="dot future"></div></div>
+                <div class="dot-row"><div class="dot future"></div><div class="dot future"></div></div>
+                <div class="dot-row"><div class="dot future"></div><div class="dot future"></div></div>
+              </div>
+              <div class="wk empty">
+                <div class="dot-row"><div class="dot future"></div><div class="dot future"></div><div class="dot future"></div></div>
+                <div class="dot-row"><div class="dot future"></div><div class="dot future"></div></div>
+                <div class="dot-row"><div class="dot future"></div><div class="dot future"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Brief -->
+          <div class="brief-card">
+            <div class="brief-lbl">✦ Today's brief</div>
+            <div class="brief-name">Marcus Aurelius</div>
+            <div class="brief-txt">"Begin the morning by saying to thyself, I shall meet with..."</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="hero-scroll">Scroll to explore</div>
 </section>
 
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee">
-    <span class="accent">Daily practice</span><span>·</span>
-    <span>Goal tracking</span><span>·</span>
-    <span class="accent">Streak accountability</span><span>·</span>
-    <span>Close-circle social</span><span>·</span>
-    <span class="accent">No algorithms</span><span>·</span>
-    <span>Shared challenges</span><span>·</span>
-    <span class="accent">Real progress</span><span>·</span>
-    <span>No vanity metrics</span><span>·</span>
-    <!-- duplicate for seamless loop -->
-    <span class="accent">Daily practice</span><span>·</span>
-    <span>Goal tracking</span><span>·</span>
-    <span class="accent">Streak accountability</span><span>·</span>
-    <span>Close-circle social</span><span>·</span>
-    <span class="accent">No algorithms</span><span>·</span>
-    <span>Shared challenges</span><span>·</span>
-    <span class="accent">Real progress</span><span>·</span>
-    <span>No vanity metrics</span><span>·</span>
+    <span class="accent">Build momentum</span><span>·</span><span>Set your catas</span><span>·</span><span class="accent">Track daily progress</span><span>·</span><span>Close-circle social</span><span>·</span><span class="accent">No algorithms</span><span>·</span><span>Daily brief</span><span>·</span><span class="accent">Visible progress</span><span>·</span><span>No vanity metrics</span><span>·</span>
+    <span class="accent">Build momentum</span><span>·</span><span>Set your catas</span><span>·</span><span class="accent">Track daily progress</span><span>·</span><span>Close-circle social</span><span>·</span><span class="accent">No algorithms</span><span>·</span><span>Daily brief</span><span>·</span><span class="accent">Visible progress</span><span>·</span><span>No vanity metrics</span><span>·</span>
   </div>
 </div>
 
 <!-- FEATURES -->
 <section class="features" id="features">
-  <p class="section-label">Why Cata</p>
+  <span class="section-label">Why Cata</span>
   <h2 class="section-title">Social media for the life you're actually building.</h2>
   <div class="features-grid">
     <div class="feat-card">
-      <div class="feat-num">01</div>
-      <div class="feat-icon">🎯</div>
-      <h3 class="feat-title">Your goals, your rules</h3>
-      <p class="feat-desc">Define any goal in any domain — fitness, reading, a creative habit, a skill. The app structures it; you own it.</p>
+      <div class="feat-num">i.</div>
+      <div class="feat-icon">✦</div>
+      <h3 class="feat-title">Set your catas</h3>
+      <p class="feat-desc">Define any goal in any domain — fitness, reading, a creative habit, a skill. Add your "why" and the app turns it into a daily practice with a target to work toward.</p>
     </div>
     <div class="feat-card">
-      <div class="feat-num">02</div>
-      <div class="feat-icon">🔥</div>
-      <h3 class="feat-title">Streaks that stick</h3>
-      <p class="feat-desc">One tap to check in. Consecutive days build a streak. Miss one? Rest days and grace periods keep it human.</p>
+      <div class="feat-num">ii.</div>
+      <div class="feat-icon">◎</div>
+      <h3 class="feat-title">Watch momentum build</h3>
+      <p class="feat-desc">One tap to check in. Each week becomes a circle, each day a dot — filled, missed, or ahead. You can see your progress at a glance, and so can your circle.</p>
     </div>
     <div class="feat-card">
-      <div class="feat-num">03</div>
-      <div class="feat-icon">👥</div>
+      <div class="feat-num">iii.</div>
+      <div class="feat-icon">◉</div>
       <h3 class="feat-title">Your circle, passively</h3>
-      <p class="feat-desc">Friends' streaks appear quietly in your feed. No likes, no follower counts. Just the people you actually know, showing up.</p>
+      <p class="feat-desc">Friends' momentum appears quietly in your feed. No likes, no follower counts. Just the people you actually know, showing up alongside you every day.</p>
     </div>
   </div>
 </section>
 
 <div class="section-divider"></div>
+
+<!-- MOMENTUM SHOWCASE -->
+<section class="momentum-section" id="momentum">
+  <div class="momentum-inner" style="max-width:1000px;margin:0 auto">
+    <div>
+      <span class="section-label">Momentum grid</span>
+      <h2 class="section-title" style="margin-bottom:24px">Every day is a dot. Every week is a circle.</h2>
+      <p style="font-family:var(--lora);font-size:16px;font-style:italic;color:var(--muted);line-height:1.75;margin-bottom:16px">Most apps show you a number. Cata shows you the shape of your effort — weeks stacking up into something you can see and feel.</p>
+      <p style="font-family:var(--lora);font-size:15px;color:var(--muted);line-height:1.75">A full circle means a perfect week. A partial circle means you showed up. Both matter. The grid doesn't lie — and it doesn't judge. It just shows you where you've been and how far you're going.</p>
+    </div>
+
+    <div class="momentum-demo">
+      <!-- Goal demo: Read 20 min -->
+      <div class="demo-goal">
+        <div class="demo-goal-top">
+          <div class="demo-check">✓</div>
+          <div class="demo-name">Read 20 min</div>
+        </div>
+        <div class="demo-why">"to think more clearly"</div>
+        <div class="demo-grid">
+          <!-- week 1: full -->
+          <div class="demo-wk full">
+            <div class="demo-dot-row"><div class="demo-dot f"></div><div class="demo-dot f"></div><div class="demo-dot f"></div></div>
+            <div class="demo-dot-row"><div class="demo-dot f"></div><div class="demo-dot f"></div></div>
+            <div class="demo-dot-row"><div class="demo-dot f"></div><div class="demo-dot f"></div></div>
+          </div>
+          <!-- week 2: full -->
+          <div class="demo-wk full">
+            <div class="demo-dot-row"><div class="demo-dot f"></div><div class="demo-dot f"></div><div class="demo-dot f"></div></div>
+            <div class="demo-dot-row"><div class="demo-dot f"></div><div class="demo-dot f"></div></div>
+            <div class="demo-dot-row"><div class="demo-dot f"></div><div class="demo-dot f"></div></div>
+          </div>
+          <!-- week 3: partial -->
+          <div class="demo-wk part">
+            <div class="demo-dot-row"><div class="demo-dot f"></div><div class="demo-dot f"></div><div class="demo-dot f"></div></div>
+            <div class="demo-dot-row"><div class="demo-dot f"></div><div class="demo-dot f"></div></div>
+            <div class="demo-dot-row"><div class="demo-dot t"></div><div class="demo-dot e"></div></div>
+          </div>
+          <!-- week 4: future -->
+          <div class="demo-wk empty">
+            <div class="demo-dot-row"><div class="demo-dot e"></div><div class="demo-dot e"></div><div class="demo-dot e"></div></div>
+            <div class="demo-dot-row"><div class="demo-dot e"></div><div class="demo-dot e"></div></div>
+            <div class="demo-dot-row"><div class="demo-dot e"></div><div class="demo-dot e"></div></div>
+          </div>
+        </div>
+        <div class="demo-days">17 of 21 days · 28-day cata</div>
+      </div>
+
+      <!-- Goal demo: No phone -->
+      <div class="demo-goal">
+        <div class="demo-goal-top">
+          <div class="demo-check" style="background:transparent;border:2px solid rgba(201,151,62,.4)"></div>
+          <div class="demo-name">No phone before 9am</div>
+        </div>
+        <div class="demo-why">"mornings are mine"</div>
+        <div class="demo-grid">
+          <div class="demo-wk part">
+            <div class="demo-dot-row"><div class="demo-dot f"></div><div class="demo-dot f"></div><div class="demo-dot f"></div></div>
+            <div class="demo-dot-row"><div class="demo-dot f"></div><div class="demo-dot m"></div></div>
+            <div class="demo-dot-row"><div class="demo-dot t"></div><div class="demo-dot e"></div></div>
+          </div>
+          <div class="demo-wk empty">
+            <div class="demo-dot-row"><div class="demo-dot e"></div><div class="demo-dot e"></div><div class="demo-dot e"></div></div>
+            <div class="demo-dot-row"><div class="demo-dot e"></div><div class="demo-dot e"></div></div>
+            <div class="demo-dot-row"><div class="demo-dot e"></div><div class="demo-dot e"></div></div>
+          </div>
+          <div class="demo-wk empty">
+            <div class="demo-dot-row"><div class="demo-dot e"></div><div class="demo-dot e"></div><div class="demo-dot e"></div></div>
+            <div class="demo-dot-row"><div class="demo-dot e"></div><div class="demo-dot e"></div></div>
+            <div class="demo-dot-row"><div class="demo-dot e"></div><div class="demo-dot e"></div></div>
+          </div>
+        </div>
+        <div class="demo-days">4 of 6 days · 21-day cata</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
   <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1">
-    <p class="section-label">How it works</p>
-    <h2 class="section-title">Two loops. One habit.</h2>
+    <span class="section-label">How it works</span>
+    <h2 class="section-title">Two loops. One life.</h2>
     <div class="steps">
       <div class="step">
         <div class="step-num">01</div>
-        <span class="step-tag tag-green">Daily habit loop</span>
-        <h3 class="step-title">Set your goal</h3>
-        <p class="step-desc">Pick anything. Run 3 miles. Read 20 pages. Write 200 words. The app gives you structure — you decide the practice.</p>
+        <span class="step-tag tag-gold">Daily habit loop</span>
+        <h3 class="step-title">Set a cata</h3>
+        <p class="step-desc">Pick any goal, add your "why", and set a target — 21 days, 28 days, 30. The app turns it into a daily practice with a momentum grid waiting to be filled.</p>
       </div>
       <div class="step">
         <div class="step-num">02</div>
-        <span class="step-tag tag-green">Daily habit loop</span>
+        <span class="step-tag tag-gold">Daily habit loop</span>
         <h3 class="step-title">Check in daily</h3>
-        <p class="step-desc">One tap. That's it. Your streak grows. A notification reminds you if you haven't checked in by evening.</p>
+        <p class="step-desc">One tap. Your dot fills in. Your week circle grows. A notification reminds you by evening if you haven't checked in — momentum is yours to protect.</p>
       </div>
       <div class="step">
         <div class="step-num">03</div>
-        <span class="step-tag tag-orange">Social loop</span>
+        <span class="step-tag tag-warm">Social loop</span>
         <h3 class="step-title">Your circle sees it</h3>
-        <p class="step-desc">Friends passively see your streaks. No posting required. Accountability happens without anyone asking for it.</p>
+        <p class="step-desc">Friends passively see your momentum — no posting required. Accountability happens without anyone having to ask. You can send a nudge when a friend goes quiet.</p>
       </div>
       <div class="step">
         <div class="step-num">04</div>
-        <span class="step-tag tag-orange">Social loop</span>
-        <h3 class="step-title">Do it together</h3>
-        <p class="step-desc">Invite a friend to join the same goal. Shared challenges turn individual habits into something you build as a pair.</p>
+        <span class="step-tag tag-warm">Social loop</span>
+        <h3 class="step-title">Read the brief</h3>
+        <p class="step-desc">Each day, a short excerpt from a journal, speech, or memoir — Marcus Aurelius, Maya Angelou, Viktor Frankl — with a reflection prompt tied to your goals.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROOF -->
-<section class="proof">
-  <div class="proof-text">
-    <p class="section-label">The idea</p>
-    <h2 class="section-title">Built different by design.</h2>
-    <p class="proof-body">Every other social app is engineered to maximize your time on screen. Cata is engineered to maximize your time off it — doing the things you said you would.</p>
-    <p class="proof-body">No infinite scroll. No algorithmic feed. No follower counts. Just your goals, your streak, and the people who matter.</p>
-    <div class="stat-row">
-      <div>
-        <div class="stat-val">1</div>
-        <div class="stat-label">tap to check in</div>
-      </div>
-      <div>
-        <div class="stat-val">∞</div>
-        <div class="stat-label">goal types supported</div>
-      </div>
-      <div>
-        <div class="stat-val">0</div>
-        <div class="stat-label">ads. ever.</div>
-      </div>
+<!-- DAILY BRIEF -->
+<section class="brief-section" id="brief">
+  <span class="section-label">Daily brief</span>
+  <h2 class="section-title">Words worth keeping. Every morning.</h2>
+  <div class="brief-cards">
+    <div class="brief-preview">
+      <div class="brief-type"><span>✦</span> Journal entry</div>
+      <div class="brief-person">Marcus Aurelius</div>
+      <div class="brief-era">Personal journal, ~170 AD · On discipline</div>
+      <div class="brief-excerpt">"Begin the morning by saying to thyself, I shall meet with the busy-body, the ungrateful, arrogant, deceitful, envious, unsocial..."</div>
     </div>
-  </div>
-  <div>
-    <div class="phone-mock">
-      <div class="phone-notch"></div>
-      <div class="phone-screen">
-        <div class="phone-header">Today</div>
-        <div class="streak-card">
-          <div class="streak-num">14</div>
-          <div class="streak-label">day streak 🔥</div>
-        </div>
-        <div class="goal-item">
-          <div class="goal-dot" style="background:#c8ff57"></div>
-          <span class="goal-name">Morning run</span>
-          <span class="goal-streak">14d</span>
-        </div>
-        <div class="goal-item">
-          <div class="goal-dot" style="background:#ff6b35"></div>
-          <span class="goal-name">Read 20 pages</span>
-          <span class="goal-streak">7d</span>
-        </div>
-        <div class="goal-item">
-          <div class="goal-dot" style="background:#a78bfa"></div>
-          <span class="goal-name">Spanish practice</span>
-          <span class="goal-streak">3d</span>
-        </div>
-        <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.08)">
-          <div style="font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,242,237,0.3);margin-bottom:10px">Your circle</div>
-          <div class="friend-row">
-            <div class="friend-av" style="background:#c8ff57">JM</div>
-            <div class="friend-info"><b>Jamie</b> is on a 21d streak</div>
-          </div>
-          <div class="friend-row" style="margin-top:8px">
-            <div class="friend-av" style="background:#ff6b35">SK</div>
-            <div class="friend-info"><b>Sam</b> checked in today</div>
-          </div>
-        </div>
-      </div>
+    <div class="brief-preview">
+      <div class="brief-type"><span>◎</span> Speech · Eulogy</div>
+      <div class="brief-person">David Foster Wallace</div>
+      <div class="brief-era">Kenyon College commencement, 2005 · On awareness</div>
+      <div class="brief-excerpt">"The really important kind of freedom involves attention, and awareness, and discipline, and effort, and being able truly to care..."</div>
+    </div>
+    <div class="brief-preview">
+      <div class="brief-type"><span>◉</span> Memoir excerpt</div>
+      <div class="brief-person">Maya Angelou</div>
+      <div class="brief-era">Interview with The Paris Review, 1990 · On showing up</div>
+      <div class="brief-excerpt">"What I try to do is write. I may write for two weeks the most boring and awful stuff. But I try. When I'm writing, I write..."</div>
     </div>
   </div>
 </section>
+
+<!-- STATS -->
+<div class="stats-section">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-val">1</div>
+      <div class="stat-label">tap to check in</div>
+      <div class="stat-sub">no friction, ever</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">0</div>
+      <div class="stat-label">ads. ever.</div>
+      <div class="stat-sub">not the model</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">∞</div>
+      <div class="stat-label">cata types</div>
+      <div class="stat-sub">you define the practice</div>
+    </div>
+  </div>
+</div>
 
 <div class="section-divider"></div>
 
-<!-- PRIVACY POLICY -->
+<!-- PRIVACY -->
 <section class="legal-section" id="privacy">
   <h2>Privacy Policy</h2>
   <p class="legal-date">Effective date: January 1, 2025 &nbsp;·&nbsp; Last updated: January 1, 2025</p>
-
   <p>Cata ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share information about you when you use our mobile application and website (collectively, the "Service").</p>
-
   <h3>Information we collect</h3>
   <p>We collect information you provide directly to us, including:</p>
   <ul>
     <li>Account information: your name, email address, and password when you create an account</li>
     <li>Profile information: display name and optional profile photo</li>
-    <li>Goal and activity data: the goals you set, your daily check-in history, and streak data</li>
+    <li>Goal and activity data: the catas you set, your daily check-in history, and momentum data</li>
     <li>Contact information: if you choose to connect with friends, we access your contacts only with your explicit permission</li>
     <li>Communications: messages or feedback you send to us</li>
   </ul>
-  <p>We also collect certain information automatically when you use the Service, including device type, operating system version, app version, and usage analytics (such as which features you use and how often).</p>
-
+  <p>We also collect certain information automatically when you use the Service, including device type, operating system version, app version, and usage analytics.</p>
   <h3>How we use your information</h3>
-  <p>We use the information we collect to:</p>
   <ul>
     <li>Provide, maintain, and improve the Service</li>
-    <li>Send you streak reminders and push notifications (which you can disable at any time)</li>
-    <li>Enable the social features of the app, such as showing your friends' streaks in their feed</li>
+    <li>Send you check-in reminders and push notifications (which you can disable at any time)</li>
+    <li>Enable the social features of the app, such as showing your friends' momentum in their feed</li>
     <li>Respond to your comments and questions</li>
     <li>Monitor and analyze usage trends to improve the user experience</li>
     <li>Detect and prevent fraudulent or unauthorized activity</li>
   </ul>
-
   <h3>Information sharing</h3>
   <p>We do not sell your personal information. We do not share your personal information with third parties except in the following limited circumstances:</p>
   <ul>
     <li><strong>With your consent:</strong> for example, when you connect with friends on the platform</li>
-    <li><strong>Service providers:</strong> we use third-party vendors (such as cloud hosting and analytics providers) who process data on our behalf under strict confidentiality agreements</li>
+    <li><strong>Service providers:</strong> we use third-party vendors who process data on our behalf under strict confidentiality agreements</li>
     <li><strong>Legal requirements:</strong> if required by law or to protect the rights and safety of our users</li>
   </ul>
-  <p>Your goal data and streak history are visible only to you and the friends you explicitly add. We never share your personal goals publicly.</p>
-
+  <p>Your goal data and momentum history are visible only to you and the friends you explicitly add. We never share your personal goals publicly.</p>
   <h3>Data retention</h3>
   <p>We retain your account information and activity data for as long as your account is active. You may delete your account at any time from the app's settings, which will permanently delete all associated data within 30 days.</p>
-
   <h3>Your rights</h3>
-  <p>You have the right to access, correct, or delete the personal information we hold about you. You may also request a copy of your data or withdraw consent for certain processing activities. To exercise these rights, contact us at the email address below.</p>
-
+  <p>You have the right to access, correct, or delete the personal information we hold about you. To exercise these rights, contact us at the email address below.</p>
   <h3>Children's privacy</h3>
-  <p>Cata is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If we learn that we have collected such information, we will delete it promptly.</p>
-
+  <p>Cata is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13.</p>
   <h3>Changes to this policy</h3>
   <p>We may update this Privacy Policy from time to time. We will notify you of material changes by posting the new policy in the app and updating the effective date above.</p>
-
   <h3>Contact us</h3>
   <p>If you have any questions about this Privacy Policy, please contact us at <strong>tleegolf@yahoo.com</strong>.</p>
 </section>
@@ -727,7 +604,6 @@
 <section class="legal-section" id="support">
   <h2>Support</h2>
   <p class="legal-date">We're a small team — we read every message.</p>
-
   <div class="support-grid">
     <div class="support-card">
       <div class="support-icon">✉️</div>
@@ -740,31 +616,30 @@
       <p>Have an idea that would make Cata better? We'd genuinely love to hear it.<br><br><a href="mailto:tleegolf@yahoo.com">tleegolf@yahoo.com</a></p>
     </div>
   </div>
-
   <h3>Frequently asked questions</h3>
-
-  <h3 style="font-size:17px;margin-top:24px">How do I delete my account?</h3>
-  <p>Go to Settings → Account → Delete Account. This permanently removes all your data within 30 days. This action cannot be undone.</p>
-
-  <h3 style="font-size:17px;margin-top:24px">Can I recover a broken streak?</h3>
-  <p>Yes — Cata includes rest days and a grace period mechanic so one missed day doesn't erase your progress. Check the streak settings in your goal to configure your rest day preferences.</p>
-
-  <h3 style="font-size:17px;margin-top:24px">Who can see my goals?</h3>
-  <p>Only friends you explicitly add can see your streak activity. Your goals are never visible publicly, and you can remove a friend at any time to stop sharing with them.</p>
-
-  <h3 style="font-size:17px;margin-top:24px">How do I turn off notifications?</h3>
-  <p>Go to Settings → Notifications to customize or disable streak reminders. You can also manage notification permissions through your iPhone's Settings app.</p>
-
-  <h3 style="font-size:17px;margin-top:24px">Is Cata free?</h3>
-  <p>Cata is free to download and use. We plan to introduce optional premium features in the future — core functionality will always remain free.</p>
+  <h3 style="font-size:17px;margin-top:24px;font-family:var(--serif)">How do I delete my account?</h3>
+  <p>Go to Settings → Account → Delete Account. This permanently removes all your data within 30 days.</p>
+  <h3 style="font-size:17px;margin-top:24px;font-family:var(--serif)">Can I recover a missed day?</h3>
+  <p>Yes — Cata includes rest days and a grace period mechanic so one missed day doesn't erase your momentum. Check the settings in your cata to configure rest day preferences.</p>
+  <h3 style="font-size:17px;margin-top:24px;font-family:var(--serif)">Who can see my catas?</h3>
+  <p>Only friends you explicitly add can see your momentum. Your goals are never visible publicly, and you can remove a friend at any time.</p>
+  <h3 style="font-size:17px;margin-top:24px;font-family:var(--serif)">How do I turn off notifications?</h3>
+  <p>Go to Settings → Notifications to customize or disable check-in reminders. You can also manage permissions through your iPhone's Settings app.</p>
+  <h3 style="font-size:17px;margin-top:24px;font-family:var(--serif)">Is Cata free?</h3>
+  <p>Cata is free to download and use. Core functionality will always remain free.</p>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <a class="footer-logo" href="#home">Cata</a>
+  <div>
+    <a class="footer-logo" href="#home">Cata</a>
+    <div class="footer-tagline">this is your life, fill it well.</div>
+  </div>
   <ul class="footer-links">
     <li><a href="#features">Features</a></li>
-    <li><a href="#privacy">Privacy Policy</a></li>
+    <li><a href="#momentum">Momentum</a></li>
+    <li><a href="#brief">Daily brief</a></li>
+    <li><a href="#privacy">Privacy</a></li>
     <li><a href="#support">Support</a></li>
     <li><a href="mailto:tleegolf@yahoo.com">Contact</a></li>
   </ul>
